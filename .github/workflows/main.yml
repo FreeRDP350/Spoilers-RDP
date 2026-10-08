@@ -37,7 +37,6 @@ jobs:
           $password = "SpoilersHub0"
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
-          choco install audiorelay
           choco install anydesk
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "RDP"
