@@ -37,8 +37,7 @@ jobs:
           $password = "SpoilersHub0"
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
-          net user runneradmin Admin@1234
-          Add-LocalGroupMember -Group "Remote Desktop Users" -Member "runneradmin"
+          choco install anydesk
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "RDP"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "RDP"
