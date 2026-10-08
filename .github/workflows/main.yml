@@ -37,6 +37,7 @@ jobs:
           $password = "SpoilersHub0"
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
+          tsdiscon
           net user runneradmin Admin@1234
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "runneradmin"
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
