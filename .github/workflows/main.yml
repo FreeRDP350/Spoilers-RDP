@@ -8,7 +8,7 @@ jobs:
     # Agar aapne GitHub par custom 32GB RAM wala runner khareeda hai, 
     # to 'windows-latest' ko uske naam se replace kar dein.
     runs-on: windows-latest 
-    timeout-minutes: 359
+    timeout-minutes: 3600
 
     steps:
       - name: Configure Core RDP Settings
@@ -36,9 +36,7 @@ jobs:
           # Set Custom Credentials
           $password = "SpoilersHub0"
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
-
-          choco install anydesk
-          choco install TightVNC
+          
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "RDP"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "RDP"
