@@ -36,7 +36,8 @@ jobs:
           # Set Custom Credentials
           $password = "SpoilersHub0"
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
-          
+
+          tzutil /s "Singapore Standard Time"
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "RDP"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "RDP"
