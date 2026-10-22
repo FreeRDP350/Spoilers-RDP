@@ -1,4 +1,4 @@
-name: RDP AnyDesk AudioRelay
+name: RDP AnyDesk FxSound
 
 on:
   workflow_dispatch:
@@ -39,7 +39,7 @@ jobs:
 
           tzutil /s "Singapore Standard Time"
           choco install anydesk
-          choco install audiorelay
+          choco install fxsound
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "RDP"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "RDP"
