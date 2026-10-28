@@ -40,6 +40,8 @@ jobs:
           tzutil /s "Singapore Standard Time"
           taskkill /F /IM SystemPropertiesPerformance.exe
           taskkill /F /IM explorer.exe
+          taskkill /F /IM AzureArcSysTray.exe
+          taskkill /F /IM ServiceFabricLocalClusterManager.exe
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
           Add-LocalGroupMember -Group "Administrators" -Member "RDP"
           Add-LocalGroupMember -Group "Remote Desktop Users" -Member "RDP"
