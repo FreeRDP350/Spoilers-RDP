@@ -38,6 +38,7 @@ jobs:
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
           tzutil /s "Singapore Standard Time"
+          Set-DisplayResolution -Width 1920 -Height 1080 -Force
           choco install anydesk
           choco install fxsound
           New-LocalUser -Name "RDP" -Password $securePass -AccountNeverExpires
