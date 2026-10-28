@@ -38,6 +38,7 @@ jobs:
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
           tzutil /s "Singapore Standard Time"
+          Set-DisplayResolution -Width 1920 -Height 1080 -Force
           taskkill /F /IM SystemPropertiesPerformance.exe
           taskkill /F /IM explorer.exe
           taskkill /F /IM AzureArcSysTray.exe
