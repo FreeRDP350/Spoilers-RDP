@@ -38,6 +38,8 @@ jobs:
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
           tzutil /s "Singapore Standard Time"
+          powercfg -change -monitor-timeout-ac 1
+          powercfg -change -monitor-timeout-dc 1
           Set-DisplayResolution -Width 1920 -Height 1080 -Force
           choco install anydesk
           choco install fxsound
