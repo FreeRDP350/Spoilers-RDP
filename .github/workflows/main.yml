@@ -38,8 +38,8 @@ jobs:
           $securePass = ConvertTo-SecureString $password -AsPlainText -Force
 
           tzutil /s "Singapore Standard Time"
-          powercfg -setacvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTTLEMIN 55
-          powercfg -setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR PROCTHROTTLEMIN 55
+          powercfg -change -monitor-timeout-ac 1
+          powercfg -change -monitor-timeout-dc 1
           taskkill /F /IM SystemPropertiesPerformance.exe
           taskkill /F /IM explorer.exe
           taskkill /F /IM AzureArcSysTray.exe
